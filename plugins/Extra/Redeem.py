@@ -33,8 +33,8 @@ async def add_redeem_code(client, message):
 
         codes_text = '\n'.join(f"➔ <code>/redeem {code}</code>" for code in codes)
         response_text = f"""
-<b>Gɪғᴛᴄᴏᴅᴇ Gᴇɴᴇʀᴀᴛᴇᴅ ✅
-Aᴍᴏᴜɴᴛ:</b> {num_codes}
+<b>ɢɪғᴛᴄᴏᴅᴇ ɢᴇɴᴇʀᴀᴛᴇᴅ ✅
+ᴀᴍᴏᴜɴᴛ:</b> {num_codes}
 
 {codes_text}
 <b>Duration:</b> {time}
@@ -44,8 +44,8 @@ Aᴍᴏᴜɴᴛ:</b> {num_codes}
 
         keyboard = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("♻️ Redeem Here ♻️", url="http://t.me/NehaTestBot")],
-                [InlineKeyboardButton("❕ Any Query ❕", url="https://t.me/IM_JISSHU")]
+                [InlineKeyboardButton("♻️ Redeem Here ♻️", url="http://t.me/diamoviebot")],
+                [InlineKeyboardButton("❕ Any Query ❕", url="https://t.me/movieverse_links")]
             ]
         )
 
