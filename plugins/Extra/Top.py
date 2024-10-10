@@ -14,11 +14,11 @@ async def set_movie_series_names_command(client, message):
     try:
         command, *names = message.text.split(maxsplit=1)
     except ValueError:
-        await message.reply("Pʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ʟɪsᴛ ᴏғ ᴍᴏᴠɪᴇ ᴀɴᴅ sᴇʀɪᴇs ɴᴀᴍᴇs ᴀғᴛᴇʀ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅ.")
+        await message.reply("ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ʟɪsᴛ ᴏғ ᴍᴏᴠɪᴇ ᴀɴᴅ sᴇʀɪᴇs ɴᴀᴍᴇs ᴀғᴛᴇʀ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅ.")
         return
 
     if not names:
-        await message.reply("Pʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ʟɪsᴛ ᴏғ ᴍᴏᴠɪᴇ ᴀɴᴅ sᴇʀɪᴇs ɴᴀᴍᴇs ᴀғᴛᴇʀ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅ.")
+        await message.reply("ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ʟɪsᴛ ᴏғ ᴍᴏᴠɪᴇ ᴀɴᴅ sᴇʀɪᴇs ɴᴀᴍᴇs ᴀғᴛᴇʀ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅ.")
         return
 
     names_string = " ".join(names)
@@ -27,24 +27,24 @@ async def set_movie_series_names_command(client, message):
 
     await movie_series_db.set_movie_series_names(capitalized_names, 1)
 
-    await message.reply("Tʜᴇ ʟɪsᴛ ᴏғ ᴍᴏᴠɪᴇ ᴀɴᴅ sᴇʀɪᴇs ɴᴀᴍᴇs ғᴏʀ ᴛʜᴇ sᴜɢɢᴇsᴛɪᴏɴ ʜᴀs ʙᴇᴇɴ ᴜᴘᴅᴀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ ✅")
+    await message.reply("ᴛʜᴇ ʟɪsᴛ ᴏғ ᴍᴏᴠɪᴇ ᴀɴᴅ sᴇʀɪᴇs ɴᴀᴍᴇs ғᴏʀ ᴛʜᴇ sᴜɢɢᴇsᴛɪᴏɴ ʜᴀs ʙᴇᴇɴ ᴜᴘᴅᴀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ")
 
 @Client.on_message(filters.command("trendlist"))
 async def get_movie_series_names_command(client, message):
     current_names = await movie_series_db.get_movie_series_names(1)
 
     if current_names:
-        response = "<b><u>Cᴜʀʀᴇɴᴛ ʟɪsᴛ ᴏғ ᴛᴏᴘ ᴛʀᴇɴᴅɪɴɢ:</u></b>\n"
+        response = "<b><u>ᴄᴜʀʀᴇɴᴛ ʟɪsᴛ ᴏғ ᴛᴏᴘ ᴛʀᴇɴᴅɪɴɢ:</u></b>\n"
         for i, name in enumerate(current_names, start=1):
             response += f"{i}. {name}\n"
         await message.reply(response.strip())
     else:
-        await message.reply("Tʜᴇ ʟɪsᴛ ᴏғ ᴛᴏᴘ ᴛʀᴇɴᴅɪɴɢ ғᴏʀ ʙᴜᴛᴛᴏɴs ᴀʀᴇ ᴇᴍᴘᴛʏ ❌")
+        await message.reply("ᴛʜᴇ ʟɪsᴛ ᴏғ ᴛᴏᴘ ᴛʀᴇɴᴅɪɴɢ ғᴏʀ ʙᴜᴛᴛᴏɴs ᴀʀᴇ ᴇᴍᴘᴛʏ")
 
 @Client.on_message(filters.command("clearlist") & filters.private & filters.user(ADMINS))
 async def clear_movie_series_names_command(client, message):
     await movie_series_db.clear_movie_series_names(1)
-    await message.reply("Tʜᴇ ᴛᴏᴘ ᴛʀᴇɴᴅɪɴɢ ʟɪsᴛ ʜᴀs ʙᴇᴇɴ ᴄʟᴇᴀʀᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ ✅")
+    await message.reply("ᴛʜᴇ ᴛᴏᴘ ᴛʀᴇɴᴅɪɴɢ ʟɪsᴛ ʜᴀs ʙᴇᴇɴ ᴄʟᴇᴀʀᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ")
 
 @Client.on_message(filters.command("trend"))
 async def trending_command(client, message):
@@ -52,7 +52,7 @@ async def trending_command(client, message):
     movie_series_names = await movie_series_db.get_movie_series_names(1)
     
     if not movie_series_names:
-        await message.reply("Tʜᴇʀᴇ ᴀʀᴇ ɴᴏ ᴍᴏᴠɪᴇ ᴏʀ sᴇʀɪᴇs ɴᴀᴍᴇs ᴀᴠᴀɪʟᴀʙʟᴇ ғᴏʀ ᴛʜᴇ ᴛᴏᴘ sᴇᴀʀᴄʜᴇs.")
+        await message.reply("ᴛʜᴇʀᴇ ᴀʀᴇ ɴᴏ ᴍᴏᴠɪᴇ ᴏʀ sᴇʀɪᴇs ɴᴀᴍᴇs ᴀᴠᴀɪʟᴀʙʟᴇ ғᴏʀ ᴛʜᴇ ᴛᴏᴘ sᴇᴀʀᴄʜᴇs.")
         return
 
     buttons = [movie_series_names[i:i + 2] for i in range(0, len(movie_series_names), 2)]
@@ -63,4 +63,4 @@ async def trending_command(client, message):
     )
     m=await message.reply_text("𝐏𝐥𝐞𝐚𝐬𝐞 𝐖𝐚𝐢𝐭, 𝐅𝐞𝐭𝐜𝐡𝐢𝐧𝐠 𝐓𝐨𝐩 𝐓𝐫𝐞𝐧𝐝𝐢𝐧𝐠...")
     await m.delete()        
-    await message.reply("<b>Hᴇʀᴇ ɪꜱ ᴛʜᴇ ᴛᴏᴘ ᴛʀᴇɴᴅɪɴɢ ʟɪꜱᴛ 👇</b>", reply_markup=spika)
+    await message.reply("<b>ʜᴇʀᴇ ɪꜱ ᴛʜᴇ ᴛᴏᴘ ᴛʀᴇɴᴅɪɴɢ ʟɪꜱᴛ 👇</b>", reply_markup=spika)
