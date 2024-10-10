@@ -40,7 +40,7 @@ async def most(client, message):
     m=await message.reply_text("𝑃𝑙𝑒𝑎𝑠𝑒 𝑊𝑎𝑖𝑡, 𝐹𝑒𝑡𝑐ℎ𝑖𝑛𝑔 𝑀𝑜𝑠𝑡 𝑆𝑒𝑎𝑟𝑐ℎ𝑒𝑠.")
     await m.edit_text("𝑃𝑙𝑒𝑎𝑠𝑒 𝑊𝑎𝑖𝑡, 𝐹𝑒𝑡𝑐ℎ𝑖𝑛𝑔 𝑀𝑜𝑠𝑡 𝑆𝑒𝑎𝑟𝑐ℎ𝑒𝑠..")
     await m.delete()
-    await message.reply_text(f"<b>Hᴇʀᴇ ɪꜱ ᴛʜᴇ ᴍᴏꜱᴛ ꜱᴇᴀʀᴄʜᴇꜱ ʟɪꜱᴛ 👇</b>", reply_markup=reply_markup)
+    await message.reply_text(f"<b>ʜᴇʀᴇ ɪꜱ ᴛʜᴇ ᴍᴏꜱᴛ ꜱᴇᴀʀᴄʜᴇꜱ ʟɪꜱᴛ 👇</b>", reply_markup=reply_markup)
 
     
 @Client.on_message(filters.command('mostlist'))
