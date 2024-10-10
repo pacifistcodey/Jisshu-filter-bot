@@ -134,7 +134,7 @@ async def start(client:Client, message):
         seen_ads = user.get("seen_ads", False)
         JISSHU_ADS_LINK = await db.jisshu_get_ads_link()
         buttons = [[
-                    InlineKeyboardButton('❌ ᴄʟᴏꜱᴇ ❌', callback_data='close_data')
+                    InlineKeyboardButton('✘ ᴄʟᴏꜱᴇ ✘', callback_data='close_data')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         if msg:
